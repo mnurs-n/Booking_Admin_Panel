@@ -16,6 +16,11 @@ const ArrayPractice = () => {
     return rooms.filter(room => room.isAvailable === true)
  };
  availableRooms(rooms);
+
+ const averagePrice = rooms.reduce((total, room) => {
+    return (total + room.price / rooms.length)
+ }, 0)
+ console.log(averagePrice)
  
 return (
     <div className="container">
