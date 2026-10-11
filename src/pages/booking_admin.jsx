@@ -1,4 +1,4 @@
-import './array_practice.css';
+import './booking_admin.css';
 
 const ArrayPractice = () => {
 
@@ -12,21 +12,22 @@ const ArrayPractice = () => {
   { id: 7, name: "Room_7", isAvailable: true, price: 70 }
  ];
 
- const availableRooms = rooms.filter((room) => {
-    if (room.isAvailable === true) {
-        return room;
-    }
- });
+ function availableRooms(rooms) {
+    return rooms.filter(room => room.isAvailable === true)
+ };
+ availableRooms(rooms);
+ 
 return (
     <div className="container">
         <h1>Rooms:</h1>
-         <p>{rooms[0].name} | {rooms[0].price} | {rooms[0].isAvailable}</p>
+         <p>{rooms[0].name}</p>
          <p>{rooms[1].name}</p>
          <p>{rooms[2].name}</p>
          <p>{rooms[3].name}</p>
          <p>{rooms[4].name}</p>
          <p>{rooms[5].name}</p>
          <p>{rooms[6].name}</p>
+         <p>Available rooms number is {availableRooms(rooms).length}</p>
     </div>
 );
 }
