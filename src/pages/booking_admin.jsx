@@ -25,6 +25,14 @@ const ArrayPractice = () => {
      return sum + room.capacity; 
  }, 0);
  console.log(availableCapacity)
+
+ const numberOfAvailableRooms = rooms.reduce((sum, room) => {
+    if (room.isAvailable) {
+        return sum + 1;
+    }
+    return sum;
+ },0)
+ console.log(numberOfAvailableRooms)
  
 return (
     <div className="container">
